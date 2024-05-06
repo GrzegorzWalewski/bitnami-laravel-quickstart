@@ -19,6 +19,11 @@ set -o pipefail
 
 cd /app
 
+if [ ! -f "composer.json" ]; then
+    info "** Installing Laravel **"
+    composer create-project --prefer-dist laravel/laravel .
+fi
+
 if [ ! -f "vendor/autoload.php" ]; then
     composer install
     cp .env.example .env
