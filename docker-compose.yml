@@ -13,3 +13,4 @@ services:
       - "DB_DATABASE=/app/database/database.sqlite"
     ports:
       - "8000:8000"
+      - "5173:5173"
